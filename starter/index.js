@@ -1,7 +1,7 @@
 /*Console Finances*/
 
-var totalNumberOfMonths = 0;
 var totalProfit = 0;
+var totalChange = 0;
 var finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -91,14 +91,14 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-
-var months = finances.length;
-console.log("The number of months " + months);
+//Number of Months in the data is equal to the number of elements
+var totalNumberOfMonths = finances.length;
+console.log("The total number of months is " + totalNumberOfMonths);
 
 var newFinances = finances.flat(1); //Creates a flat array which can be worked on
 console.log(newFinances);
 
-var finances
+// Created a solution using forEach to seperate the array into two seperate arrays for numbers and strings
 var letterArray = []
 var numberArray = []
 
@@ -109,25 +109,59 @@ newFinances.forEach((eachItem) => {
     numberArray.push(eachItem);
     }
   });
-
   console.log(letterArray, numberArray);
+
+//Used the Count/reduce funtion to add the numbers array together  
 
 var totalProfit = numberArray.reduce(Count);
 function Count(total, value) {
 return total+value;
 }
-console.log(totalProfit);
+console.log("The total profit = £" + totalProfit);
+
+
+var totalChange = 0;
+var numberArray;
+
+for (let i = 0; i < numberArray.length; i++) {
+     totalChange += (numberArray[i]++ / totalNumberOfMonths-1);
+    
+}
+console.log(totalChange);
+
+
+
+
+/*for (var i = 0; i < numberArray.length; i++);
+totalChange == numberArray + numberArray[i];
+console.log(totalChange);
+
+//Find the average change difference of the array
+var totalMonthlyDifference = 0;
+for (var i = 0; i < numberArray.length; i++);
+totalMonthlyDifference === numberArray[i] + numberArray;
+i++;
+
+console.log(totalMonthlyDifference[i]);*/
 
 
 
 
 
 
-var newFinances = newFinances.reduce(Count);
+
+
+
+
+
+
+
+
+/*var newFinances = newFinances.reduce(Count);
 function Count(total, value) {
 return total+value;
 }
-console.log(newFinances);
+console.log(newFinances);*/
 
 
 
@@ -146,16 +180,6 @@ console.log(newFinances);
 //}
 //console.log(total);
 
-
-
-
-
-
-
-
-
-
-
 /*
 console.log(sum);
 
@@ -167,21 +191,6 @@ function Count(total, value) {
 return total+value;
 }
 console.log(totals);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*var totalPrice = finances.reduce(function(accumulator, currentPurchase) {
   return accumulator + currentPurchase.price;
