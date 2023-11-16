@@ -1,8 +1,7 @@
 /*Console Finances*/
 
 var totalNumberOfMonths = 0;
-var sum = 0;
-
+var totalProfit = 0;
 var finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -92,59 +91,168 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-/*Calculates the number of elements in the array*/
+
 var months = finances.length;
 console.log("The number of months " + months);
 
+var newFinances = finances.flat(1); //Creates a flat array which can be worked on
+console.log(newFinances);
+
+var finances
+var letterArray = []
+var numberArray = []
+
+newFinances.forEach((eachItem) => {
+  if(isNaN(eachItem)) {
+    letterArray.push(eachItem); 
+   } else {
+    numberArray.push(eachItem);
+    }
+  });
+
+  console.log(letterArray, numberArray);
+
+var totalProfit = numberArray.reduce(Count);
+function Count(total, value) {
+return total+value;
+}
+console.log(totalProfit);
+
+
+
+
+
+
+var newFinances = newFinances.reduce(Count);
+function Count(total, value) {
+return total+value;
+}
+console.log(newFinances);
+
+
+
+// var newFinances;  
+// var i = 0;
+//var total = 0;
+//for (let i = 0; i < newFinances.length; i++);
+//total += newFinances[i];
+
+
+//var prices = 0;
+//var total = 0;
+
+//for (let i = 0; i < newFinances.length; i++) {
+//  total += prices[i];
+//}
+//console.log(total);
+
+
+
+
+
+
+
+
+
+
+
+/*
+console.log(sum);
+
+var merge1;
+var evens = _.remove(merge1, function(n) { return n % 2 === 0;});console.log(merge1)
+
+var totals = merge1.reduce(Count);
+function Count(total, value) {
+return total+value;
+}
+console.log(totals);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*var totalPrice = finances.reduce(function(accumulator, currentPurchase) {
+  return accumulator + currentPurchase.price;
+}, 0);
+
+console.log("Total Price:", totalPrice);
+
+/*months = finances.length;
+console.log("The number of months " + months);
+
+totalProfit = months + finances;
+console.log(totalProfit);
+
+/*let i = 0;
+for (let i = 0; i < months; i++);
+function totalProfit = */
+
+
+/*Calculates the number of elements in the array*/
+/*months = finances.length;
+console.log("The number of months " + months);
+
 /*Grabs the [0] index of the array elements which is the first element ['Jan-2010', 867884];*/
-var jan = finances[0];
+/*var jan = finances[0];
 console.log(jan);
 
 /*grabs the last element from the array['Feb-2017', 671099] */
-var last = finances[finances.length -1];
+/*var last = finances[finances.length -1];
 console.log(last);
 
 /* Loop over each item and logs the item with index number in the array*/
-finances.forEach((item, index, array) => {console.log(item, index);})
+/*finances.forEach((item, index, array) => {console.log(item, index);})
 
 /*ARRAY METHODS*/
 /*makes the array into a string*/
-console.log(finances.toString());
+/*console.log(finances.toString());
 
-/*grabs the last element off the list */
-var last1 = finances.pop();
+/*grabs the last element off the Array */
+/*var last1 = finances.pop();
 console.log(last1);
 
 var last2 = finances.length -1;
 console.log(last2);
 
 /* adds an element to the end of an array */
-finances.push("Julember-2020");
+/*finances.push("Julember-2020");
 console.log(finances);
 
 /*shifts all the elements of an array by one,removing the first elementin the list in the process*/
-finances.shift();
+/*finances.shift();
 console.log(finances);
 
-/*adds an element andincreases theindex of the array by one*/
-finances.unshift("Dezember");
+/*adds an element and increases the index of the array by one*/
+/*finances.unshift("Dezember");
 console.log(finances);
 
 /*concat merges two strings together*/
-var monthlyFinances = ["2000", "2001", "2002"];
+/*var monthlyFinances = ["2000", "2001", "2002"];
 var yearlyFinances = finances.concat(monthlyFinances);
 console.log(yearlyFinances);
 
 /* sorts the arrayin ascending order alphabetically */
-finances.sort();
+/*finances.sort();
 console.log(finances);
 
 /* reverse sorts the array in ascending alphabatical order */
-finances.reverse();
+/*finances.reverse();
 console.log(finances);
 
 /*Map Method - Map is used to create a new array out of an existing one by applying a function but it does not hange the existing array*/
-var num1 = [2, 3, 4, 5, 6]
+/*var num1 = [2, 3, 4, 5, 6]
 var num2 = num1.map(multiply);
 function multiply(value) {
   return value * 2
@@ -152,23 +260,25 @@ function multiply(value) {
 console.log(num2)
 
 /*.Filter Method, returns a true or false statement and if the statement returns true it gets pushed to the outer statement*/
-
-var num3 = num1.filter(comp); 
+/*var num3 = num1.filter(comp); 
 function comp(value) {
 return value>4;
 }
 console.log(num3);
 
-/*.Return-returns the value of of items to a sum*/
-
-
-
-var num4 = num1.reduce(Count);
+/*.Return-returns the value of of items count*/
+/*var num4 = num1.reduce(Count);
 function Count(total, value) {
 return total+value;
 }
 console.log(num4);
 
+/*See what this does lmao*/
+/*var yearlyFinances = finances.concat(Count);
+function concat(total, value) {
+return total+value;
+}
+console.log(yearlyFinances);
 /*let i = 0;
 for (let i = 0; i < finances.length; i++);
    console.log(finances[1]);*/
@@ -193,5 +303,4 @@ janMonthCount(finances);*/
     totalNumberOfMonths++; 
   console.log(totalNumberOfMonths)
 }  */
-   
-
+  
