@@ -95,8 +95,7 @@ var finances = [
 var totalNumberOfMonths = finances.length;
 console.log("The total number of months is " + totalNumberOfMonths);
 
-var newFinances = finances.flat(1); //Creates a flat array which can be worked on
-console.log(newFinances);
+var newFinances = finances.flat(1); //Creates a flat array which can manipulated
 
 // Created a solution using forEach to seperate the array into two seperate arrays for numbers and strings
 var letterArray = []
@@ -109,9 +108,8 @@ newFinances.forEach((eachItem) => {
     numberArray.push(eachItem);
     }
   });
-  console.log(letterArray, numberArray);
 
-//Used the Count/reduce funtion to add the numbers array together  
+//Used the Count/reduce function to add the numbers array together  
 
 var totalProfit = numberArray.reduce(Count);
 function Count(total, value) {
@@ -119,15 +117,97 @@ return total+value;
 }
 console.log("The total profit = £" + totalProfit);
 
-
+//Not sure how the difference is -2315 based on looking at the figures
 var totalChange = 0;
 var numberArray;
 
 for (let i = 0; i < numberArray.length; i++) {
-     totalChange += (numberArray[i]++ / totalNumberOfMonths-1);
-    
+     totalChange += (numberArray[i]++ / totalNumberOfMonths); 
 }
-console.log(totalChange);
+console.log("The total change is " + (Math.floor(totalChange)));
+
+/*var numberArray
+
+for (let i = 0; i < numberArray.length; i++) {
+function diff (num1, num2) {
+  if (num1 > num2) {
+    return num1 - num2
+  } else {
+    return num2 - num1
+  }
+}
+console.log(difference(numberArray));
+}
+/* Created an array to add the total differences but seem to get something different from what I was expecting :/*/
+var numberArray;
+function difference(numberArray) {
+  var result = [];
+  for(var i = 0; i < numberArray.length; i++) {
+   result.push(Math.abs(numberArray[i] - numberArray[i - 1]));
+}
+return result
+}
+console.log(difference(numberArray));
+
+
+/*var numberArray;
+let createDifference = (numberArray) => {
+   const differenceArray = [];
+   for(let i = 1; i < numberArray.length; i++){
+      differenceArray.push(Math.abs(numberArray[i] - numberArray[i - 1]));
+   };
+   return differenceArray;
+}
+console.log(createDifference(numberArray));
+
+
+/*var numberArray 
+var newArray = numberArray.map(n + n);
+console.log(newArray);
+
+/*
+var finances;
+
+const earningsArray = finances.map((el) => el[1]);
+
+const profitMonths = finances.filter((el) => el[1] > 0);
+const salesOnProfitMonths = profitMonths
+  .map((el) => el[1])
+  .reduce((accVal, curVal) => accVal + curVal, 0);
+
+const avgOfProfitAndLoss =
+  earningsArray.reduce((accVal, curVal) => accVal + curVal, 0) / data.length; // get the average of all total and losses
+
+const maxMonth = {
+  monthName: '',
+  profit: 0,
+};
+
+const minMonth = {
+  monthName: '',
+  profit: 0,
+};
+
+data.forEach((month) => {
+  if (month[1] > maxMonth.profit) {
+    maxMonth.monthName = month[0];
+    maxMonth.profit = month[1];
+  }
+
+  if (month[1] < minMonth.profit) {
+    minMonth.monthName = month[0];
+    minMonth.profit = month[1];
+  }
+
+  return { maxMonth, minMonth };
+});
+
+console.log('Total sale of profit months: ', salesOnProfitMonths);
+console.log('Total average : ', avgOfProfitAndLoss);
+console.log('The month with max profit is : ', maxMonth);
+console.log('The month with min profit is : ', minMonth);
+
+
 
 
 
