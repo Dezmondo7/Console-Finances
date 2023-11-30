@@ -25,4 +25,4 @@ The end result is to look like the below.
   ```
 
   ## Image
-  ![Image of the working code](Console_F_image.png)
+  ![Image of the working code] (Console_F_image.png)

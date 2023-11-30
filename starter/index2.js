@@ -125,20 +125,3 @@ for (let i = 0; i < finances.length; i++) {
     totalChange += change;
 }
 console.log("The total average change is " + ((totalChange / (finances.length - 1))));
-
-/** Creating a function to discover the maximum difference between two dates */
-
-let n = numberArray.length;
-
-function maxDifference(numberArray, numberArray_size) {
-    let max_difference = numberArray[1] - numberArray[0];
-    for (let i = 0; i < numberArray_size; i++)
-    {
-    for (let j = i + 1; j < numberArray_size; j++);
-    {
-    if (numberArray[j] - numberArray[i] > max_difference)
-    max_difference = numberArray[j] - numberArray[i];
-}
-}
-return maxDifference;
-}
