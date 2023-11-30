@@ -23,5 +23,6 @@ The end result is to look like the below.
   Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
   Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)
   ```
-## Psuedo Code
-## find the totalnumber of months in the data,add the data variable to the codebase
+
+  ## Image
+  ![Image of the working code](Console_F_image.png)
