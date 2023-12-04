@@ -124,10 +124,23 @@ if (i > 0) {
 previousAmount = currentAmount;
 totalChange += change;
 }
+
 console.log("The total average change is " + ((totalChange / (finances.length - 1))));
 
-/** Creating a function to discover the maximum difference between two dates */
+//creating a variable to log the total 
+var totalAvergeChange = ((totalChange / (finances.length - 1)));
+console.log("The total average change is " + totalAvergeChange.toFixed(2))
 
+//* creating a function to round down the totalChange
+/* function financial() {
+  return Number.parseFloat().toFixed(2);
+}
+console.log(financial()); 
+
+
+
+/** Creating a function to discover the maximum difference between two dates */
+/**
 let n = numberArray.length;
 
 function maxDifference(numberArray, numberArray_size) {
@@ -141,4 +154,4 @@ max_difference = numberArray[j] - numberArray[i];
 }
 }
 return maxDifference;
-}
+} */
